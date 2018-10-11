@@ -1,0 +1,9 @@
+
+{{template "header" .}}
+<div class="header">
+  <h1>Login Page</h1>
+  <p>Resize the browser window to see the responsive topnav effect.</p>
+</div>
+{{template "topnav"}}
+{{template "body" .}}
+{{template "footer"}}

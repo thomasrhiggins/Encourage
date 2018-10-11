@@ -1,0 +1,54 @@
+{{template "header" .}}
+<html>
+
+	<head>
+		<title>{{ .Title }}</title>
+		<link rel="stylesheet" type="text/css" href="/static/styles.css">
+	</head>
+
+	{{template "body"}}
+	<body>
+		<nav>
+			<a href="/logout">logout</a>
+		</nav>
+		<main>
+			<h1>{{ .Title }}</h1>
+			{{ if .DisplayForm }}
+			<div id="update-form">
+				<form action="/" method="POST">
+					<textarea name="update"></textarea>
+					<div>
+						<button type="submit">Post Update</button>
+					</div>
+				</form>
+			</div>
+			{{ end }}
+{{template "topnav"}}
+<div class="row">
+	<div class="column side">
+		<h2>left Side</h2>
+		<p>Colum side row Lorem ipsum dolor sit amet, consectetur adipiscing elit..</p>
+	</div>
+	<div class="column middle">
+			{{ range .Updates }}
+
+
+				<div class="column middle">
+					<strong><a  href="/{{ .GetUser.GetUsername }}">{{ .GetUser.GetUsername }}</a> wrote:</strong>
+					<br>
+				<div>{{ .GetBody }}</div>
+				</div>
+			{{ end }}
+			</div>
+			<div class="column side">
+				<h2>right side</h2>
+				<p>last colum side row or sit amet, consectetur adipiscing elit..
+				</p>
+				<!-- commenting out text -->
+
+
+			</div>
+		</div>
+		</main>
+	</body>
+</html>

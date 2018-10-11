@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<html>
+<link  rel="stylesheet"  type="text/css" href="/static/styles.css">
+
+
+    <head>
+      <div class="home">
+        <title>Login</title>
+        <a href="/">Home</a>
+        <a style="float:right" href="/register"> Signup </a>
+      </div>
+    </head>
+    <body>
+        {{ if . }}
+        <a class="error">{{ . }}</a>
+        {{ end }}
+        <div class="home">
+
+        <form style="float:right" method="POST">
+            <a> Username: <input name="username"></a>
+            <a>Password: <input name="password"></a>
+
+                <button style="vertical-align:middle" type="submit">Login</button>
+            </div>
+        </form>
+    </body>
+</html>

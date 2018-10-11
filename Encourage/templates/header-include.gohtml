@@ -1,0 +1,36 @@
+{{define "header" }}
+<!DOCTYPE html>
+<html lang="en-US">
+
+<html>
+<link  rel="stylesheet"  type="text/css" href="/static/styles.css">
+
+
+<head>
+  <base href="/">
+
+</head>
+
+<body>
+  <div class="home">
+    <a href="/">Home</a>
+
+
+    {{ if .Username }}
+    <a style="float:right"href="/logout"> Logout </a>
+    <a style="float:right"href="/getuser">{{.Username}}</a>
+      <a style="float:right" href="/register"> Welcome </a>
+    {{else}}
+    <a style="float:right" href="/register"> Signup </a>
+    <a style="float:right" href="/register"> Login </a>
+    {{ end }}
+
+  </div>
+
+   <!-- and the comment closes with -->
+
+
+
+</body>
+</html>
+{{end}}
